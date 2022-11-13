@@ -16,9 +16,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        let autorApi = AutorAPI()
+        let store = ZCodersStore()
+        let autorViewController = (window!.rootViewController as! UINavigationController)
+            .topViewController as! AutorViewController
         
-//        let autoresViewController = (window!.rootViewController as! UINavigationController)
-//            .topViewController as! AutoresViewController
+        autorViewController.api = autorApi
+        autorViewController.zCodersStore = store
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
