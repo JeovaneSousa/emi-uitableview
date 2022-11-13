@@ -13,4 +13,16 @@ struct Autor {
     let sobrenome: String
     let bio: String
     let tecnologias: [String]
+    
+    var nomeCompleto: String {
+        return "\(nome) \(sobrenome)"
+    }
+    
+    init(foto: String, nome: String, sobrenome: String, bio: String, tecnologias: String...) {
+        self.foto = foto
+        self.nome = nome
+        self.sobrenome = sobrenome
+        self.bio = bio
+        self.tecnologias = tecnologias
+    }
 }

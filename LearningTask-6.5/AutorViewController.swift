@@ -18,7 +18,6 @@ class AutorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.bringSubviewToFront(plusButton)
         setupTableView()
         loadAutores()
         applyTheme()
@@ -31,7 +30,8 @@ class AutorViewController: UIViewController {
 
     }
     private func loadAutores(){
-        zCodersStore?.todos = api?.listaTodos()
+        guard var store = zCodersStore else{return}
+        store.todos = api?.listaTodos()
     }
 }
 

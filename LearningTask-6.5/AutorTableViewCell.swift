@@ -15,7 +15,7 @@ class AutorTableViewCell: UITableViewCell {
     
     
     func setup(para autor: Autor){
-        nomeLabel.text = autor.nome
+        nomeLabel.text = autor.nomeCompleto
         tecnologiasLabel.text = autor.tecnologias.joined(separator: ", ")
     }
     

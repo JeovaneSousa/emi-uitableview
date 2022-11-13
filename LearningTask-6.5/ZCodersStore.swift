@@ -5,6 +5,6 @@
 //  Created by jeovane.barbosa on 12/11/22.
 //
 
-struct ZCodersStore: AutorStore{
+class ZCodersStore: AutorStore{
     var todos: [Autor]?
 }
